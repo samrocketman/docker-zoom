@@ -16,10 +16,18 @@ devices necessary for audio, video, webcam, and accelerated rendering.
 
 * Host: Ubuntu 18.04
 * Docker base image: Ubuntu 18.04
-* Estimated size of resulting docker image: 721MB
+* Estimated size of resulting docker image: 745MB
 
 I matched the host and image to simplify group membership for the `zoom` user
 inside of the container.
+
+If you refer to the [Makefile](Makefile), you'll notice several devices passed
+through to zoom.
+
+- `/dev/dri` grants access to the graphics card for video rendering
+  acceleration.
+- `/dev/snd` grants access to audio subsystem for playing sound.
+- `/dev/video0` grants access to a webcam.
 
 # Start zoom
 

@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # zoom prerequisites not included in their deps
 RUN set -ex; \
 apt-get update; \
-apt-get install -y curl pulseaudio-utils; \
+apt-get install -y curl pulseaudio pulseaudio-utils; \
 apt-get clean
 
 RUN set -ex; \
