@@ -1,6 +1,6 @@
 .PHONY: docker-build docker-run clean
 
-WEBCAM_DEVICES := $(shell /bin/sh -c '( for x in /dev/video*;do y="$$y --device $$x";done; echo $$y )')
+WEBCAM_DEVICES := $(shell /bin/sh -c '[ -z "`ls /dev/video*`" ] || ( for x in /dev/video*;do y="$$y --device $$x";done; echo $$y )')
 
 run: docker-run
 
